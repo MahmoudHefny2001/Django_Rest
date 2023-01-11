@@ -25,13 +25,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-
 SECRET_KEY = os.environ.get('SECRET_KEY', None) 
 # SECURITY WARNING: don't run with debug turned on in production!
 
 DEBUG = os.environ.get('DEBUG', None)
 
-ALLOWED_HOSTS = tuple(os.environ.get('ALLOWED_HOSTS', None))  # type: ignore
+ALLOWED_HOSTS = list(os.environ.get('ALLOWED_HOSTS'))
 
 
 # Application definition
@@ -88,17 +87,18 @@ DATABASES = {
     }
 }
 
-# 'default': {
-        # 'ENGINE': 'django.db.backends.postgresql',
-        # 'NAME': os.environ.get('DATABASE_NAME'),
-        # 'USER': os.environ.get('DATABASE_USER'),
-        # 'PASSWORD': os.environ.get('DATABASE_PASSWORD'),
-        # 'HOST': os.environ.get('DATABASE_HOST'),
-        # 'PORT': os.environ.get('DATABASE_PORT'),
-        # 'TEST': {
-            # 'NAME': '',
-        # },
-    # }
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': os.environ.get('DATABASE_NAME'),
+#         'USER': os.environ.get('DATABASE_USER'),
+#         'PASSWORD': os.environ.get('DATABASE_PASSWORD'),
+#         'HOST': os.environ.get('DATABASE_HOST'),
+#         'PORT': os.environ.get('DATABASE_PORT'),
+#         'TEST': {
+#             'NAME': '',
+#         },
+#     }
 # }
 
 # Password validation

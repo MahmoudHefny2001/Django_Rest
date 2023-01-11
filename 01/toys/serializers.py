@@ -3,7 +3,7 @@ from .models import Toy
 
 
 
-class ToySerializer(serializers.Serialzer):
+class ToySerializer(serializers.Serializer):
     pk = serializers.IntegerField(read_only=True)
     name = serializers.CharField(max_length=150)
     description = serializers.CharField(max_length=300)
