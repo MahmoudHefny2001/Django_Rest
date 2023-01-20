@@ -10,7 +10,7 @@ class ToySerializer(serializers.Serializer):
     release_date = serializers.DateTimeField()
     toy_category = serializers.CharField(max_length=200)
     was_included_in_home = serializers.BooleanField(required=False)
-
+    
     
     def create(self, validated_data):
         return Toy.objects.create(**validated_data)
